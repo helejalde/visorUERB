@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 aplicacion.use(express.json());
 
 aplicacion.use(cors({
-    origin:'http://localhost:8080',  // Siempre coincidir con el frontend
+    origin:'https://visoruerb.onrender.com',  // http:localhost:8080 para desarrollo local
     credentials: true
 }))
 
