@@ -68,7 +68,7 @@ export default {
     const fetchRegistro = async () => {
       try {
         const codigo = route.params.codigo; // Asegurarse de usar el mismo nombre que en router-link
-        const response = await axios.get(`http://localhost:3000/ahhc/${codigo}`);
+        const response = await axios.get(`${process.env.VUE_APP_API_URL}/ahhc/${codigo}`);//`http://localhost:3000/ahhc/${codigo}`
         Object.assign(registro, response.data);
       } catch (error) {
         console.error("Error al obtener el registro:", error);
