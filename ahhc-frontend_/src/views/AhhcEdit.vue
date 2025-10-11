@@ -78,7 +78,7 @@ export default {
     const guardar = async () => {
       try {
         const codigo = route.params.codigo;
-        await axios.put(`http://localhost:3000/ahhcEdit/${codigo}`, registro);
+        await axios.put(`${process.env.VUE_APP_API_URL}/ahhcEdit/${codigo}`, registro);//`http://localhost:3000/ahhcEdit/${codigo}`
         alert("Listo ya le actualizaste.");
         router.push('ConsultaTodo').then(()=>{
             location.reload();

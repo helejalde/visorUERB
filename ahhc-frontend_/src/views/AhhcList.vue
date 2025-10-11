@@ -134,7 +134,7 @@ export default {
 
     async fetchRegistros() {
       try {
-       const response = await axios.get("http://localhost:3000/api/ahhc");
+       const response = await axios.get(`${process.env.VUE_APP_API_URL}/api/ahhc`); //"http://localhost:3000/api/ahhc"
       
         this.registros = response.data;
             // Llamar a extractCoordinaciones después de obtener los registros
@@ -199,7 +199,7 @@ export default {
 
     async cargarPoligonos() {
     try {
-      const response = await axios.get("http://localhost:3000/poligonos");
+      const response = await axios.get(`${process.env.VUE_APP_API_URL}/poligonos`);//"http://localhost:3000/poligonos"
       const geojsonData = response.data;
 
       if (!geojsonData || !geojsonData.features) {
