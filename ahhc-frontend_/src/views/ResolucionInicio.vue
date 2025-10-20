@@ -111,7 +111,7 @@ export default {
   methods: {
     async fetchRegistros() {
       try {
-        const response = await axios.get("http://localhost:3000/r_inicio");
+        const response = await axios.get(`${process.env.VUE_APP_API_URL}/r_inicio`);//"http://localhost:3000/r_inicio"
         this.registros = response.data;
       } catch (error) {
         console.error("Error al obtener los registros:", error);

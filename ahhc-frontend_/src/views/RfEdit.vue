@@ -146,7 +146,7 @@
       const fetchRegistro = async () => {
         try {
           const codigo = route.params.codigo; // Asegurarse de usar el mismo nombre que en router-link
-          const response = await axios.get(`http://localhost:3000/r_final/${codigo}`);
+          const response = await axios.get(`${process.env.VUE_APP_API_URL}/r_final/${codigo}`);//`http://localhost:3000/r_final/${codigo}`
           Object.assign(registro, response.data);
         } catch (error) {
           console.error("Error al obtener el registro:", error);
@@ -156,7 +156,7 @@
       const guardar = async () => {
         try {
           const codigo = route.params.codigo;
-          await axios.put(`http://localhost:3000/r_finalEdit/${codigo}`, registro);
+          await axios.put(`${process.env.VUE_APP_API_URL}/r_finalEdit/${codigo}`, registro);//`http://localhost:3000/r_finalEdit/${codigo}`
           alert("Listooo actualizadoooo");
           router.push("Edit Rf");
         } catch (error) {
