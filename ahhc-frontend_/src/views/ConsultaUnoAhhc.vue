@@ -33,7 +33,7 @@ export default {
     async fetchRegistro() {
       try {
         const { codigo } = this.$route.params;
-        const response = await axios.get(`http://localhost:3000/ahhc/${codigo}`);
+        const response = await axios.get(`${process.env.VUE_APP_API_URL}/ahhc/${codigo}`);//http://localhost:3000/ahhc/${codigo}
         this.registro = response.data;
       } catch (error) {
         console.error("Error al obtener el registro:", error);
